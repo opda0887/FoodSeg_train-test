@@ -18,7 +18,8 @@
 
 
 ## 💿我訓練時用的指令，但是報錯
-python tools/train.py configs/foodnet/ccnet_r50-d8_v1.py --work-dir checkpoints/FoodNet --launcher none
+* 添加完上面檔案後，先執行：pip install -e .
+* python tools/train.py configs/foodnet/ccnet_r50-d8_v1.py --work-dir checkpoints/FoodNet --launcher none
 
 * 報錯
 <img src="https://i.imgur.com/vchtBXD.png">
