@@ -1,33 +1,51 @@
-# 📠關於這些檔案要放哪裡：
+# 📠 關於這些檔案要放哪裡：
 
-## foodnet folder
-* (9/22更) 應該不會用到了
-* 我這裡建立了 ccnet_r50-d8_v1.py，我訓練時也只有用這個
-* 路徑：/mmsegmentation/configs/ 裡面，把整個資料夾塞進去
+## **init**.py
 
-## __init__.py
-* 添加第43行、第65行的 FoodDataset
-* 路徑：/mmsegmentation/mmseg/datasets/ 裡面，直接覆蓋檔案
+- 添加第 43 行、第 65 行的 FoodDataset
+- 路徑：/mmsegmentation/mmseg/datasets/ 裡面，直接覆蓋檔案
 
 ## FoodSeg_v2.py
-* 路徑：/mmsegmentation/mmseg/datasets/ 裡面，直接新增檔案
+
+- 路徑：/mmsegmentation/mmseg/datasets/ 裡面，直接新增檔案
 
 ## FoodSeg_v2 (in configs).py
-* 路徑：/mmsegmentation/configs/_base_/datasets/ 裡面，先修改名稱為 FoodSeg_v2，在新增檔案
 
-## FoodSeg_pspnet_20240921.py
-* 用來配置一個完整的 pspnet config
-* 路徑：/mmsegmentation 裡面，然後執行該程式，會產生一個完整的 config 在 /mmsegmentation/work_dirs/FoodSeg_pspnet 當中
+- 路徑：/mmsegmentation/configs/_base_/datasets/ 裡面，先修改名稱為 FoodSeg_v2，在新增檔案
 
+## instructions.txt
 
-## 💿還有東西待補充
-* 添加完上面檔案後，先執行：pip install -e .
-* wating: pspnet model post
-* wating: 執行食物分割預測的程式
-* wating: 統整使用教學
+- 包含之前使用的一些指令
+- 可依情況斟酌使用
 
-* 報錯
-<img src="https://i.imgur.com/vchtBXD.png">
+## configs
 
-* 產生以下檔案
-<img src="https://i.imgur.com/G5UXsEM.png">
+- 包含用來配置一個完整 config 的不同檔案
+- 路徑：將其中的檔案取出並置於 /mmsegmentation 裡面，然後可個別執行程式，會產生一個個完整的 config 在 /mmsegmentation/FoodSeg-Configs 當中
+
+## tools
+
+- 包含其他的執行工具，會需要再自己調整一些程式碼
+- 路徑：將其中的檔案取出並置於 /mmsegmentation 裡面，直接添加檔案即可使用
+
+## 💿 環境與執行
+
+- 添加完上面這些檔案後，先執行：
+  ```txt
+  pip install -e .
+  ```
+- 再開始訓練 (範例)：
+  ```txt
+  python tools/train.py FoodSeg-Configs/FoodSeg_pspnet_20240921.py
+  ```
+- 環境配置可參考以下文檔: https://docs.google.com/document/d/1W_akmH9TnFBK38LEwLWUvIevS4kc5gym_A-c8VshD68/edit?usp=sharing
+
+- 預期執行成功狀況
+  <img src="https://i.imgur.com/paHtkwf.png">
+
+- 驗證模型結果
+  <img src="https://i.imgur.com/9FktCBm.png">
+
+- 模型效能預覽
+  <img src="https://i.imgur.com/Hqy0DTF.png">
+  <img src="https://i.imgur.com/dSrzuUo.png">

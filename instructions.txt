@@ -1,0 +1,27 @@
+conda activate imgseg
+
+cd mmsegmentation
+
+python demo/image_demo.py demo/demo.jpg configs/pspnet/pspnet_r50-d8_512x1024_40k_cityscapes.py checkpoints/pspnet_r50-d8_512x1024_40k_cityscapes_20200605_003338-2966598c.pth --device cuda:0
+
+-----------------
+
+conda clean --all
+
+pip uninstall torch torchvision torchaudio mmcv-full mmcv
+
+pip cache purge
+
+pip install -r requirements.txt
+
+python setup.py install
+
+-----------------
+
+https_blog.csdn.net/?url=https%3A%2F%2Fblog.csdn.net%2Fwjinjie%2Farticle%2Fdetails%2F115164251
+
+-----------------
+
+checks:
+
+from mmseg.apis import inference_segmentor, init_segmentor
